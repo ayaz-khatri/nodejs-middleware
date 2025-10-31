@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="/styles.css" rel="stylesheet">
+    <title>Add Form</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <div class="container-fluid mx-4 my-1">
+            <a class="navbar-brand fw-bold" href="index.html">
+            Contact App
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+    
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="box">
+                    <% if (errors.length > 0) { %>
+                        <ul class="alert alert-danger">
+                        <% errors.forEach(error => { %>
+                            <div><li><%= error.msg %></li></div>
+                        <% });  %>
+                        </ul>
+                    <% } %>
+                    <form action="/saveform" method="POST">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3 class="fw-bold">Add Contact</h3>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="my-3">
+                            <label>UserName</label>
+                            <input type="text" class="form-control" name="username">
+                        </div>
+                         <div class="my-3">
+                            <label>Email</label>
+                            <input type="text" class="form-control" name="email">
+                        </div>
+                         <div class="my-3">
+                            <label>Password</label>
+                            <input type="text" class="form-control" name="password">
+                        </div>
+                         <div class="my-3">
+                            <label>Age</label>
+                            <input type="text" class="form-control" name="age">
+                        </div>
+                         <div class="my-3">
+                            <label>City</label>
+                                <select class="form-select" name="city">
+                                    <option selected>Choose city</option>
+                                    <option value="mps">Mirpurkhas</option>
+                                    <option value="hyd">Hyderabad</option>
+                                    <option value="khi">Karachi</option>
+                                </select>
+                        </div>
+                        
+                        <div class="my-3">
+                            <input type="submit" class="btn btn-lg btn-danger w-100" name="create" value="Add">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-dark mt-5 footer">
+        <div class="row">
+            <div class="col-md-6">
+                <p class="text-secondary px-5 py-md-4 text-md-start text-center mt-3">
+                    <i class="fa-regular fa-copyright"></i>
+                    Copyright Contact App - All rights reserved.
+                </p>
+            </div>
+            <div class="col-md-6">
+                <p class="text-light px-5 py-md-4 text-md-end text-center mt-3">
+                    <a href="#" class="me-2 text-secondary social-icon h5" data-bs-toggle="tooltip" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="me-2 text-secondary social-icon h5" data-bs-toggle="tooltip" title="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="me-2 text-secondary social-icon h5" data-bs-toggle="tooltip" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="me-2 text-secondary social-icon h5" data-bs-toggle="tooltip" title="Linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="me-2 text-secondary social-icon h5" data-bs-toggle="tooltip" title="Youtube"><i class="fa-brands fa-youtube"></i></a>
+                </p>
+            </div>
+        </div>
+    </div>  
+
+</body>
+</html>
